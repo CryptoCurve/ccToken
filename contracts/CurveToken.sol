@@ -3,7 +3,7 @@ pragma solidity ^0.4.21;
 
 import "./SafeMath.sol";
 
-import "./templates/ERC20Basic.sol";
+import "./templates/WRC20Basic.sol";
 import "./templates/BasicToken.sol";
 import "./templates/Ownable.sol";
 import "./templates/Pausable.sol";
@@ -21,7 +21,7 @@ import "./templates/CrossChainToken.sol";
  * Stakeable
  * CrossChainable
  */
-contract CurveToken is ERC20Basic, BasicToken, Ownable, Pausable, BurnableToken, MintableToken, StakedToken, CrossChainToken, NotifyContract {
+contract CurveToken is WRC20Basic, BasicToken, Ownable, Pausable, BurnableToken, MintableToken, StakedToken, CrossChainToken, NotifyContract {
     using SafeMath for uint256;
 
     event Notify(address indexed _sender, uint256 _value, bytes _extraData);

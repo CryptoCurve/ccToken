@@ -1,13 +1,13 @@
 pragma solidity ^0.4.21;
 
-import "./ERC20Basic.sol";
+import "./WRC20Basic.sol";
 
 
 /**
- * @title ERC20 interface
+ * @title WRC20 interface
  * @dev see https://github.com/ethereum/EIPs/issues/20
  */
-contract ERC20 is ERC20Basic {
+contract WRC20 is WRC20Basic {
   function allowance(address owner, address spender)
     public view returns (uint256);
 
