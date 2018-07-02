@@ -31,7 +31,7 @@ contract CurveToken is WRC20Basic, BasicToken, Ownable, Pausable, BurnableToken,
 
     // Lightweight implementation of ERC820 for basic third party contract interaction
     function transferAndNotify(address _to, uint256 _amount, bytes _data) public returns (bool) {
-        require(super.transfer(_to, _value))
+        require(super.transfer(_to, _amount));
         require(NotifyContract(_to).notify(msg.sender, _amount, _data));
     }
 }

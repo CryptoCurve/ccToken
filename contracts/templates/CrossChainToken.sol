@@ -1,7 +1,7 @@
 pragma solidity ^0.4.21;
 
 import "./BasicToken.sol";
-import "./MintableToken.sol"
+import "./MintableToken.sol";
 
 /**
  * @title CrossChain Token
@@ -36,7 +36,7 @@ contract CrossChainToken is BasicToken, MintableToken {
     }
 
     function _crossChainReceive(address _from, address _to, uint256 _value) internal {
-        mint(_to, _value)
+        mint(_to, _value);
         emit CrossChainReceive(_from, _to, _value);
     }
 }
