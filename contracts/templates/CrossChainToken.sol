@@ -1,7 +1,7 @@
 pragma solidity ^0.4.21;
 
-import "./BasicToken.sol";
-import "./MintableToken.sol";
+import "../zeppelin-solidity/token/WRC20/BasicToken.sol";
+import "../zeppelin-solidity/token/WRC20/MintableToken.sol";
 
 /**
  * @title CrossChain Token
