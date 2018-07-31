@@ -12,7 +12,6 @@ function wait(ms){
 contract('curvecrowdsale', function(accounts) {
 
   before(function() {
-    console.log(Crowdsale.address)
     //mint tokens to the contract
     return Token.deployed()
       .then(function(instance){
