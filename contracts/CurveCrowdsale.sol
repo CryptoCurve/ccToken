@@ -16,6 +16,7 @@ contract CurveCrowdsale is TimedCrowdsale, MintedCrowdsale, WhitelistedCrowdsale
         uint256 _closingTime,
         uint256 _rate,
         address _wallet,
+        uint256 _userMin,
         uint256 _userCap,
 	uint256 _totalCap,
         MintableToken _token
@@ -25,7 +26,7 @@ contract CurveCrowdsale is TimedCrowdsale, MintedCrowdsale, WhitelistedCrowdsale
     TimedCrowdsale(_openingTime, _closingTime)
     WhitelistedCrowdsale()
     CappedCrowdsale(_totalCap)
-    IndividuallyCappedCrowdsale(_userCap) {
+    IndividuallyCappedCrowdsale(_userMin, _userCap) {
 
     }
 }

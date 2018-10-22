@@ -13,9 +13,11 @@ contract IndividuallyCappedCrowdsale is Crowdsale, Ownable {
   using SafeMath for uint256;
 
   mapping(address => uint256) public contributions;
+  uint256 public userMin;
   uint256 public userCap;
 
-  constructor(uint256 _userCap) public {
+  constructor(uint256 _userMin, uint256 _userCap) public {
+    userMin = _userMin;
     userCap = _userCap;
   }
   
@@ -25,6 +27,14 @@ contract IndividuallyCappedCrowdsale is Crowdsale, Ownable {
    */
   function setUserCap(uint256 _cap) external onlyOwner {
     userCap = _cap;
+  }
+
+  /**
+   * @dev Sets user minimum contribution.
+   * @param _min wei lower limit for individual contribution
+   */
+  function setUserMin(uint256 _min) external onlyOwner {
+    userMin = _min;
   }
 
   /**
@@ -53,6 +63,7 @@ contract IndividuallyCappedCrowdsale is Crowdsale, Ownable {
     if (userCap > 0) {
       require(contributions[_beneficiary].add(_weiAmount) <= userCap);
     }
+    require(contributions[_beneficiary].add(_weiAmount) >= userMin);
   }
 
   /**
