@@ -2,14 +2,13 @@ var CurveToken = artifacts.require("CurveToken.sol");
 var CurveCrowdsale = artifacts.require("./CurveCrowdsale.sol");
 
 module.exports = function(deployer, network, accounts) {
-  const startTime = Math.round((new Date(Date.now() + 50000).getTime())/1000); // 5 seconds from now
-  //const endTime = Math.round((new Date(Date.now() + 10000).getTime())/1000); // 10 seconds from now
-  const endTime = Math.round((new Date().getTime() + (86400000 * 20))/1000); // Today + 20 days
-  const rate = new web3.BigNumber(1000);
-  const userMin = new web3.BigNumber(web3.toWei(0.5, "ether"));
-  const userCap = new web3.BigNumber(web3.toWei(2, "ether"));
-  const totalCap = new web3.BigNumber(web3.toWei(10, "ether"));
-  const wallet = accounts[2];
+  const startTime = 1540911600
+  const endTime = 1543590000
+  const rate = new web3.BigNumber(5);
+  const userMin = new web3.BigNumber(web3.toWei(25, "ether"));
+  const userCap = new web3.BigNumber(web3.toWei(600, "ether"));
+  const totalCap = new web3.BigNumber(web3.toWei(6000000, "ether"));
+  const wallet = "0x3bca0aca21916cc8a70c8b7b841e9c210fed06d8"
 
   return deployer
     //.then(() => {
@@ -20,11 +19,11 @@ module.exports = function(deployer, network, accounts) {
         startTime,
         endTime,
         rate,
-        wallet, // Replace this wallet address with the last one (10th account) from Ganache UI. This will be treated as the beneficiary address. 2000000000000000000, // 2 ETH 500000000000000000000 // 500 ETH
-        userMin,
+        wallet, //The beneficiary address
+	userMin,
 	userCap,
 	totalCap,
-        "0x5aa57b5dcb78725b3c0b6838994a674b34a85063"
+        "0x8b1ad61b8dfe8512b6dbdc9eb012756466d9b3b2"
       )
     })
 };
