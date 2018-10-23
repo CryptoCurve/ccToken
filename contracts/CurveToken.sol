@@ -25,7 +25,7 @@ contract CurveToken is WRC20Basic, BasicToken, Ownable, PausableToken, BurnableT
     using SafeMath for uint256;
 
     string public constant name = "Curve";
-    string public constant symbol = "CRV";
+    string public constant symbol = "CURV";
     uint8 public constant decimals = 18;
 
     // Lightweight implementation of WRC820 for basic third party contract interaction

@@ -20,10 +20,10 @@ module.exports = function(deployer, network, accounts) {
         endTime,
         rate,
         wallet, //The beneficiary address
-	userMin,
-	userCap,
-	totalCap,
-        "0x8b1ad61b8dfe8512b6dbdc9eb012756466d9b3b2"
+    	userMin,
+    	userCap,
+    	totalCap,
+        "0x53b6f92ec9aa49c80b6263d3a69843d456f1bc2c"
       )
     })
 };
