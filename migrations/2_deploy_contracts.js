@@ -8,22 +8,23 @@ module.exports = function(deployer, network, accounts) {
   const userMin = new web3.BigNumber(web3.toWei(25, "ether"));
   const userCap = new web3.BigNumber(web3.toWei(600, "ether"));
   const totalCap = new web3.BigNumber(web3.toWei(6000000, "ether"));
+  const tokenMintCap = new web3.BigNumber(web3.toWei(415000000, "ether"));
   const wallet = "0x3bca0aca21916cc8a70c8b7b841e9c210fed06d8"
 
   return deployer
-    //.then(() => {
-    //  return deployer.deploy(CurveToken);
-    //})
     .then(() => {
-      return deployer.deploy(CurveCrowdsale,
-        startTime,
-        endTime,
-        rate,
-        wallet, //The beneficiary address
-    	userMin,
-    	userCap,
-    	totalCap,
-        "0x53b6f92ec9aa49c80b6263d3a69843d456f1bc2c"
-      )
+      return deployer.deploy(CurveToken, tokenMintCap);
     })
+    //.then(() => {
+    //  return deployer.deploy(CurveCrowdsale,
+    //    startTime,
+    //    endTime,
+    //    rate,
+    //    wallet, //The beneficiary address
+    //	userMin,
+    //	userCap,
+    //	totalCap,
+    //    "0x53b6f92ec9aa49c80b6263d3a69843d456f1bc2c"
+    //  )
+    //})
 };
