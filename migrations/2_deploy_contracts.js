@@ -12,19 +12,19 @@ module.exports = function(deployer, network, accounts) {
   const wallet = "0x3bca0aca21916cc8a70c8b7b841e9c210fed06d8"
 
   return deployer
-    .then(() => {
-      return deployer.deploy(CurveToken, tokenMintCap);
-    })
     //.then(() => {
-    //  return deployer.deploy(CurveCrowdsale,
-    //    startTime,
-    //    endTime,
-    //    rate,
-    //    wallet, //The beneficiary address
-    //	userMin,
-    //	userCap,
-    //	totalCap,
-    //    "0x53b6f92ec9aa49c80b6263d3a69843d456f1bc2c"
-    //  )
+    //  return deployer.deploy(CurveToken, tokenMintCap);
     //})
+    .then(() => {
+      return deployer.deploy(CurveCrowdsale,
+        startTime,
+        endTime,
+        rate,
+        wallet, //The beneficiary address
+    	userMin,
+    	userCap,
+    	totalCap,
+        "0x4fe17956b20bec33e8e69b8baf82c60b37c1c8c5"
+      )
+    })
 };
