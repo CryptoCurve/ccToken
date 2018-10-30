@@ -26,7 +26,7 @@ contract CappedToken is MintableToken {
     address _to,
     uint256 _amount
   )
-    onlyOwner
+    hasMintPermission
     canMint
     public
     returns (bool)
